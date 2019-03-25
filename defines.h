@@ -358,7 +358,7 @@ typedef enum {
   typedef int int16_t;
   #define pinModeExt      pinMode
   #define digitalReadExt  digitalRead
-  #define digitalWriteExt digitalWrite  
+  #define digitalWriteExt digitalWrite
 
 #else // Hardware defines for RPI/BBB/ESP8266
 
@@ -377,7 +377,7 @@ typedef enum {
     #define PIN_FREE_LIST     {} // no free GPIO pin at the moment
     #define ETHER_BUFFER_SIZE   4096
 
-    /* To accommodate different OS30 versions, we use software defines pins */ 
+    /* To accommodate different OS30 versions, we use software defines pins */
     extern byte PIN_BUTTON_1;
     extern byte PIN_BUTTON_2;
     extern byte PIN_BUTTON_3;
@@ -431,19 +431,19 @@ typedef enum {
   #elif defined(OSPI)
 
     #define OS_HW_VERSION    OSPI_HW_VERSION_BASE
-    #define PIN_SR_LATCH      22    // shift register latch pin
-    #define PIN_SR_DATA       27    // shift register data pin
-    #define PIN_SR_DATA_ALT   21    // shift register data pin (alternative, for RPi 1 rev. 1 boards)
-    #define PIN_SR_CLOCK       4    // shift register clock pin
-    #define PIN_SR_OE         17    // shift register output enable pin
-    #define PIN_RAINSENSOR    14    // rain sensor
-    #define PIN_FLOWSENSOR    14    // flow sensor (currently shared with rain sensor, change if using a different pin)
-    #define PIN_RFTX          15    // RF transmitter pin
-    #define PIN_BUTTON_1      23    // button 1
-    #define PIN_BUTTON_2      24    // button 2
-    #define PIN_BUTTON_3      25    // button 3
+    #define PIN_SR_LATCH      255    // shift register latch pin
+    #define PIN_SR_DATA       255   // shift register data pin
+    #define PIN_SR_DATA_ALT   255    // shift register data pin (alternative, for RPi 1 rev. 1 boards)
+    #define PIN_SR_CLOCK      255    // shift register clock pin
+    #define PIN_SR_OE         255    // shift register output enable pin
+    #define PIN_RAINSENSOR    255    // rain sensor
+    #define PIN_FLOWSENSOR    255    // flow sensor (currently shared with rain sensor, change if using a different pin)
+    #define PIN_RFTX          255    // RF transmitter pin
+    #define PIN_BUTTON_1      255    // button 1
+    #define PIN_BUTTON_2      255    // button 2
+    #define PIN_BUTTON_3      255    // button 3
 
-    #define PIN_FREE_LIST		{5,6,7,8,9,10,11,12,13,16,18,19,20,21,23,24,25,26}  // free GPIO pins
+    #define PIN_FREE_LIST		{4,17,18,27,22,23,24}  // free GPIO pins
     #define ETHER_BUFFER_SIZE   16384
   /** BBB pin defines */
   #elif defined(OSBO)
@@ -458,7 +458,7 @@ typedef enum {
     #define PIN_RAINSENSOR    48    // P9_15, rain sensor is connected to pin D3
     #define PIN_FLOWSENSOR    48    // flow sensor (currently shared with rain sensor, change if using a different pin)
     #define PIN_RFTX          51    // RF transmitter pin
-    
+
     #define PIN_FREE_LIST     {38,39,34,35,45,44,26,47,27,65,63,62,37,36,33,32,61,86,88,87,89,76,77,74,72,73,70,71}
     #define ETHER_BUFFER_SIZE   16384
   #else
@@ -545,5 +545,3 @@ typedef enum {
 #define DISPLAY_MSG_MS      2000  // message display time (milliseconds)
 
 #endif  // _DEFINES_H
-
-
